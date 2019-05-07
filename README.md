@@ -27,8 +27,6 @@ date       || credit  || debit  || balance
 ##### Setup
 
 - Clone git repository onto local computer.
-- Run 'rspec' to check tests.
--
 
 ##### Model
 
