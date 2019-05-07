@@ -26,11 +26,19 @@ date       || credit  || debit  || balance
 
 ##### Setup
 
-- Clone git repository onto local computer.
+- clone repository onto local computer
+- open Javascript Console in Chrome
 
-##### Model
+##### Approach
 
-** load pictures **
+| Account | |
+| --- | --- |
+| deposit | increases the balance |
+| withdrawal | decreases the balance |
+| currentBalance | returns current balance from transactions |
+| returnTransactions | returns transactions made |
+| getFormattedDate | formats the date to view as in the criteria |
 
-
-##### Test coverage
+| Statement(account) | |
+| --- | --- |
+| print | prints transaction details from account as in the criteria |
