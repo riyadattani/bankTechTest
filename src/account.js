@@ -8,8 +8,9 @@ Account.prototype.getFormattedDate = function(currentDate = new Date) {
   return formattedDate;
 };
 
-Account.prototype.deposit = function (amount, date = this.getFormattedDate()) {
+Account.prototype.deposit = function (amount, date = this.getFormattedDate(), type) {
   var deposit = {
+    type: "deposit",
     date: date,
     amount: amount,
     balance: this.balance += amount
@@ -17,8 +18,9 @@ Account.prototype.deposit = function (amount, date = this.getFormattedDate()) {
   this.transactions.push(deposit)
 };
 
-Account.prototype.withdraw = function (amount, date = this.getFormattedDate()) {
+Account.prototype.withdraw = function (amount, date = this.getFormattedDate(), type) {
   var withdrawal = {
+    type: "withdrawal",
     date: date,
     amount: amount,
     balance: this.balance -= amount
@@ -28,4 +30,8 @@ Account.prototype.withdraw = function (amount, date = this.getFormattedDate()) {
 
 Account.prototype.currentBalance = function () {
   return this.balance;
+};
+
+Account.prototype.returnTransactions = function () {
+  return this.transactions;
 };

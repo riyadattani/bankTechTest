@@ -25,7 +25,7 @@ describe("Account", function() {
     account.deposit(80)
     account.withdraw(50)
     account.deposit(100)
-    expect(account.transactions.length).toEqual(3);
+    expect(account.returnTransactions().length).toEqual(3);
   });
 
   it ("should return the date when deposit is made", function () {
@@ -33,7 +33,21 @@ describe("Account", function() {
     stubDate = account.getFormattedDate(oldDate);
     account.deposit(50, stubDate);
     expect(account.transactions[0].date).toEqual("7/6/2018")
+  });
+
+  it ("should return the amount when a deposit/withdrawal is made", function () {
+    account.deposit(50)
     expect(account.transactions[0].amount).toEqual(50)
-    expect(account.transactions[0].balance).toEqual(50)
+  });
+
+  it ("should return the balance when a deposit/withdrawal is made", function () {
+    account.deposit(50)
+    account.withdraw(20)
+    expect(account.transactions[1].balance).toEqual(30)
+  });
+
+  it ("should return the type when a deposit/withdrawal is made", function () {
+    account.deposit(50)
+    expect(account.transactions[0].type).toEqual("deposit")
   });
 });
