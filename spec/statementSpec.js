@@ -1,5 +1,4 @@
 describe("Statement", function() {
-  // var statement;
   var account = new Account;
 
   it("should print the transactions made in the account", function () {
