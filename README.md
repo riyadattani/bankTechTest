@@ -25,10 +25,24 @@ date       || credit  || debit  || balance
 ```
 
 ##### Setup
-
+```
 - clone repository onto local computer
-- open Javascript Console in Chrome
+- run SpecRunner.html file on Chrome by pasting the full path in the browser to check the tests are passing
+```
+#### Example
+```
+- open Javascript Console in Chrome and you can try the following example:
 
+account = new Account;
+account.deposit(1000);
+account.deposit(2000);
+account.withdraw(500);
+
+statement = new Statement(account);
+statement.print();
+```
+
+Pictures of the output:
 ##### Approach
 
 | Account | |

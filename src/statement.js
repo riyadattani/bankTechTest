@@ -6,9 +6,9 @@ Statement.prototype = {
   print() {
     var statement = "date || credit || debit || balance \n"
     this.account.returnTransactions().forEach(function(transaction) {
-      if (transaction.type == "deposit") {
+      if (transaction.type == "withdrawal") {
        statement += transaction.date + " || || " + transaction.amount + " || " + transaction.balance
-     } else { (transaction.type == "withdrawal")
+     } else { (transaction.type == "deposit")
        statement += transaction.date + " || " + transaction.amount + " || || " + transaction.balance
      }
      statement += " \n"

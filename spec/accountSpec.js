@@ -30,7 +30,6 @@ describe("Account", function() {
 
   it ("should return the date when deposit is made", function () {
     var stubDate = new Date(2018, 5, 7);
-    // stubDate = account.getFormattedDate(oldDate);
     account.deposit(50, stubDate.toLocaleDateString());
     expect(account.transactions[0].date).toEqual("07/06/2018")
   });

@@ -30,7 +30,7 @@ Account.prototype = {
   },
 
   returnTransactions() {
-    return this.transactions;
+    return this.transactions.reverse();
   },
 
 }
