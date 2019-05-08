@@ -9,8 +9,8 @@ Account.prototype = {
     var deposit = {
       type: "deposit",
       date: date,
-      amount: amount,
-      balance: this.balance += amount
+      amount: amount.toFixed(2),
+      balance: (this.balance += amount).toFixed(2)
     }
     this.transactions.push(deposit)
   },
@@ -19,14 +19,14 @@ Account.prototype = {
     var withdrawal = {
       type: "withdrawal",
       date: date,
-      amount: amount,
-      balance: this.balance -= amount
+      amount: amount.toFixed(2),
+      balance: (this.balance -= amount).toFixed(2)
     }
     this.transactions.push(withdrawal)
   },
 
   currentBalance() {
-    return this.balance;
+    return this.balance.toFixed(2);
   },
 
   returnTransactions() {

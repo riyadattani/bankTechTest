@@ -42,7 +42,10 @@ statement = new Statement(account);
 statement.print();
 ```
 
-Pictures of the output:
+Picture of the output:
+
+![Output](./public/Screenshot 2019-05-08 16.18.55.png)
+
 ##### Approach
 
 | Account | |
