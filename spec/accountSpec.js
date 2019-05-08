@@ -7,21 +7,26 @@ describe("Account", function() {
 
   it("the balance should increase if the user makes a deposit", function() {
     account.deposit(50)
-    expect(account.currentBalance()).toEqual("50.00");
+    expect(account.balance).toEqual(50);
   });
 
   it("the balance should decrease if the user makes a withdrawal", function() {
     account.withdraw(50)
-    expect(account.currentBalance()).toEqual("-50.00");
+    expect(account.balance).toEqual(-50);
   });
 
   it("the balance should change depending on the withdrawal or deposit", function() {
     account.deposit(80)
     account.withdraw(50)
-    expect(account.currentBalance()).toEqual("30.00");
+    expect(account.balance).toEqual(30);
   });
 
-  it("there should be 2 transactions", function() {
+  it("returns a string with the number to two decimal places", function() {
+    account.deposit(50)
+    expect(account.currentBalance()).toEqual("50.00");
+  });
+
+  it("there should be 3 transactions", function() {
     account.deposit(80)
     account.withdraw(50)
     account.deposit(100)
