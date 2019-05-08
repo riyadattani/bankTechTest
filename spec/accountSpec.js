@@ -29,10 +29,10 @@ describe("Account", function() {
   });
 
   it ("should return the date when deposit is made", function () {
-    var oldDate = new Date(2018, 5, 7);
-    stubDate = account.getFormattedDate(oldDate);
-    account.deposit(50, stubDate);
-    expect(account.transactions[0].date).toEqual("7/6/2018")
+    var stubDate = new Date(2018, 5, 7);
+    // stubDate = account.getFormattedDate(oldDate);
+    account.deposit(50, stubDate.toLocaleDateString());
+    expect(account.transactions[0].date).toEqual("07/06/2018")
   });
 
   it ("should return the amount when a deposit/withdrawal is made", function () {

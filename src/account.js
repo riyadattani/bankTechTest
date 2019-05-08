@@ -5,7 +5,7 @@ function Account() {
 
 Account.prototype = {
 
-  deposit(amount, date = this.getFormattedDate(), type) {
+  deposit(amount, date = (new Date).toLocaleDateString()) {
     var deposit = {
       type: "deposit",
       date: date,
@@ -15,7 +15,7 @@ Account.prototype = {
     this.transactions.push(deposit)
   },
 
-  withdraw(amount, date = this.getFormattedDate(), type) {
+  withdraw(amount, date = (new Date).toLocaleDateString()) {
     var withdrawal = {
       type: "withdrawal",
       date: date,
@@ -32,10 +32,5 @@ Account.prototype = {
   returnTransactions() {
     return this.transactions;
   },
-
-  getFormattedDate(currentDate = new Date) {
-    let formattedDate = currentDate.getDate() + "/" + (currentDate.getMonth() + 1) + "/" + currentDate.getFullYear()
-    return formattedDate;
-  }
 
 }

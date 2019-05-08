@@ -1,14 +1,17 @@
 describe("Statement", function() {
-  var account = new Account;
+  var mockAccount = {
+    returnTransactions: function() {
+      return [{type: 'deposit', date: (new Date(2019, 05, 01)).toLocaleDateString(), amount: 100, balance: 100}, {type: 'withdrawal', date: (new Date(2019, 05, 02)).toLocaleDateString(), amount: 20, balance: 80}]
+    },
+
+    currentBalance: function() {
+      return 80;
+    }
+  };
 
   it("should print the transactions made in the account", function () {
-    var oldDate = new Date(2019, 5, 1);
-    stubDate = account.getFormattedDate(oldDate);
-
-    account.deposit(80, stubDate);
-    account.withdraw(50, stubDate)
-    statement = new Statement(account)
-    expect(statement.print()).toEqual("date || credit || debit || balance \n1/6/2019 || || 80 || 80 \n1/6/2019 || 50 || || 30 \n")
+    statement = new Statement(mockAccount)
+    expect(statement.print()).toEqual("date || credit || debit || balance \n01/06/2019 || || 100 || 100 \n02/06/2019 || 20 || || 80 \n")
   });
 
 });
