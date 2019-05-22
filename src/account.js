@@ -34,3 +34,5 @@ Account.prototype = {
   },
 
 }
+
+module.exports = Account;

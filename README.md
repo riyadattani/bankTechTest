@@ -26,8 +26,11 @@ date       || credit  || debit  || balance
 
 ##### Setup
 ```
-- clone repository onto local computer
-- run SpecRunner.html file on Chrome by pasting the full path in the browser to check the tests are passing
+clone repository onto local computer
+- npm install
+
+Check tests on console, run:
+- jasmine
 ```
 #### Example
 ```

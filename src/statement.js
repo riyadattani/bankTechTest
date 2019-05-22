@@ -15,4 +15,6 @@ Statement.prototype = {
     });
     return statement
   }
-};
+}
+
+module.exports = Statement;

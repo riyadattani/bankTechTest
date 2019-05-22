@@ -1,3 +1,6 @@
+const Account = require('../src/account.js')
+const Statement = require('../src/statement.js')
+
 describe("Account", function() {
   var account;
 
